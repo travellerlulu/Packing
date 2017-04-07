@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Carousel</title>
+    <style>
+        html, body, ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .wrapper {
+            width: 500px;
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #list {
+            position: relative;
+        }
+
+        #list li {
+            width: 500px;
+            height: 280px;
+            float: left;
+        }
+
+        #list li img {
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+        }
+
+        .flipBtn {
+            position: absolute;
+            width: 100%;
+            height: 60px;
+            top: 50%;
+            margin-top: -30px;
+        }
+
+        #next, #prev {
+            position: absolute;
+            width: 40px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            text-decoration: none;
+            color: #fff;
+            background-color: rgba(0, 0, 0, .6);
+        }
+
+        #prev {
+            left: 0;
+        }
+
+        #next {
+            right: 0;
+        }
+
+        .jump {
+            position: absolute;
+            width: 100%;
+            bottom: 10px;
+            left: 0;
+            text-align: center;
+        }
+
+        .jump span {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin-right: 5px;
+            border-radius: 50%;
+            background-color: #ccc;
+        }
+
+        .jump span.on {
+            background-color: orangered;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <ul id="list" style="width: 3000px;left: -500px;">
+        <li><img src="images/04.jpeg" alt=""></li>
+        <li><img src="images/01.jpeg" alt=""></li>
+        <li><img src="images/02.jpeg" alt=""></li>
+        <li><img src="images/03.jpeg" alt=""></li>
+        <li><img src="images/04.jpeg" alt=""></li>
+        <li><img src="images/01.jpeg" alt=""></li>
+    </ul>
+    <div class="flipBtn">
+        <a href="javascript:void(0);" id="prev">prev</a>
+        <a href="javascript:void(0);" id="next">next</a>
+    </div>
+    <div id="jump" class="jump">
+        <span index="0" class="on"></span>
+        <span index="1"></span>
+        <span index="2"></span>
+        <span index="3"></span>
+    </div>
+</div>
+<!--<script src="js/main_c.js"></script>-->
+<script src="js/Carousel.js"></script>
+<script>
+    var buttons = document.getElementById("jump").children
+    var opt = {
+        list: "list",
+        buttons: buttons,
+        prev: "prev",
+        next: "next",
+        curClassName: "on",
+        width: 500,
+        len: 4,
+    }
+    new Carousel(opt);
+</script>
+</body>
+</html>

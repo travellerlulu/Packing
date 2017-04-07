@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drag</title>
+    <style>
+        #box {
+            width: 50px;
+            height: 50px;
+            background-color: lightpink;
+            cursor: move;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<!-- 封装 -->
+<script src="js/Drag.js"></script>
+<script>
+    new Drag("box");
+</script>
+<!-- 未封装 -->
+<!--<script src="js/main_d.js"></script>-->
+</body>
+</html>
